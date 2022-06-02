@@ -1,22 +1,14 @@
 package com.example.myapplication
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.View
+import retrofit2.http.Body
 
-class Login : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-    }
-
-    fun login(v:View){
-
-    }
-    fun signUp(v:View){
-        val intent = Intent(this,SignUp::class.java)
-        startActivity(intent)
-        finish()
-    }
-}
+//아웃풋
+data class Login(
+    //json key 값이랑 동일
+    var result : String
+)
+data class LoginData(
+    var name : String,
+    var id : String,
+    var pw : String
+)

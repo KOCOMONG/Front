@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="진단"
+        android:icon="@drawable/ic_baseline_local_hospital_24"
+        />
+    <item
+        android:id="@+id/questionFragment"
+        android:title="의약"
+        android:icon="@drawable/medicine"
+        />
+    <item
+        android:id="@+id/managerFragment"
+        android:title="식단"
+        android:icon="@drawable/ic_baseline_flatware_24"
+        />
+    <item
+        android:id="@+id/profileFragment"
+        android:title="내 정보"
+        android:icon="@drawable/ic_baseline_person_24"
+        />
+
+</menu>
