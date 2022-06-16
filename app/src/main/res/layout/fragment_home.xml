@@ -5,48 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeFragment"
-    android:background="@color/lightGreen">
-
-    <TextView
-        android:id="@+id/tv_chat_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/font_title"
-        android:text="슬기로운 건강생활"
-        android:textColor="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
+    android:background="@color/homeColor">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/view_chat"
+        android:id="@+id/inner_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginVertical="10dp"
-        android:layout_marginHorizontal="15dp"
-        android:background="@drawable/white_round_box_style"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/box_style_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_chat_title"
-        >
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/iv_chat"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+
+        <TextView
+            android:id="@+id/tv_chat_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="88dp"
+            android:paddingHorizontal="10dp"
+            android:text="내 손 안의 \n작은 병원"
+            android:textAlignment="textStart"
+            android:textColor="#2F5C30"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardview_image"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_image" />
+
+        <TextView
+            android:id="@+id/tv_chat_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/font_title"
+            android:text="AI 진단"
+            android:textColor="@color/green"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview_image"
+            android:layout_width="350dp"
+            android:layout_height="200dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginVertical="20dp"
-            android:src="@drawable/main_chat"
-            android:background="@drawable/white_round_box_style"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_chat_sub_title">
+
+            <ImageView
+                android:id="@+id/iv_member"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/main_chat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tv_diet_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="AI닥터 코코닥터는 \n인공지능을 기반으로 한 챗봇입니다."
+            android:textAlignment="textStart"
+            android:textColor="@color/green"
+            android:textSize="18dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/cardview_image"
+            app:layout_constraintTop_toBottomOf="@+id/tv_chat_exp" />
 
         <Button
             android:id="@+id/btn_start"
@@ -55,10 +100,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="52dp"
-            android:backgroundTint="@color/green"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/round_button_style"
             android:onClick="startChat"
-            android:paddingVertical="15dp"
+            android:paddingVertical="30dp"
             android:text="진단 시작하기"
             android:textColor="@color/white"
             android:textSize="20dp"
@@ -66,13 +111,40 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tv_chat_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_title"
+        android:text="슬기로운 건강생활"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginVertical="3dp"
+        android:background="@drawable/round_button_style_profile"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:padding="11dp"
+        android:onClick="startProfile"
+        app:layout_constraintBottom_toTopOf="@+id/inner_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_chat_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/person" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,10 +15,6 @@
         android:title="식단"
         android:icon="@drawable/ic_baseline_flatware_24"
         />
-    <item
-        android:id="@+id/profileFragment"
-        android:title="내 정보"
-        android:icon="@drawable/ic_baseline_person_24"
-        />
+
 
 </menu>

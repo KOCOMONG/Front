@@ -4,69 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DietResultActivity">
+    tools:context=".DietResultActivity"
+    android:background="#EEEEEE">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        android:backgroundTint="#00000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.558" />
-
-    <TextView
-        android:id="@+id/tv_diet_result_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/diary_font"
-        android:text="오늘의 식단"
-        android:textColor="@color/orange"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageView
-        android:id="@+id/imageView_diet"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/chef2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_diet_result_title" />
 
     <TextView
         android:id="@+id/tv_diet_explanation"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="20dp"
         android:text="보다 건강한 다이어트를 위해 \n운동 : 식사 = 5 : 5 비율로 \n계산하여 안내드립니다."
-        android:textColor="@color/black"
-        android:textSize="18dp"
         android:textAlignment="center"
-        android:background="@drawable/box_style"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_diet"
+        android:textColor="@color/brown"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView_diet"
-        app:layout_constraintTop_toTopOf="@+id/imageView_diet" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:background="@drawable/box_style_2"
+        android:background="@drawable/box_style_3"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:text="식사 조절로 줄여야 할 칼로리 : 840kcal "
+        android:text="식사 조절로 줄여야 할 칼로리 :kcal "
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -79,49 +43,97 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:src="@drawable/rice"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_soup"
         app:layout_constraintEnd_toStartOf="@+id/imageView_soup"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ImageView
         android:id="@+id/imageView_soup"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/soup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ImageView
         android:id="@+id/imageView_sidedish"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@drawable/sidedish"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView_soup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView_soup"
-        app:layout_constraintTop_toTopOf="@+id/imageView_soup"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <TextView
+        android:id="@+id/food1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="밥"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_rice"
+        app:layout_constraintStart_toStartOf="@+id/imageView_rice"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_rice" />
+
+    <TextView
+        android:id="@+id/food2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="국"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_soup"
+        app:layout_constraintStart_toStartOf="@+id/imageView_soup"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_soup" />
+
+    <TextView
+        android:id="@+id/food3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="반찬"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_sidedish"
+        app:layout_constraintStart_toStartOf="@+id/imageView_sidedish"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_sidedish" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/rectangle_button_style_diet"
+        android:paddingVertical="15dp"
+        android:text="다른 식단 보기"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food2" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/box_style_2"
+        android:background="@drawable/box_style_3"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:text="운동으로 소모해야 할 칼로리 : 840kcal "
+        android:text="운동으로 소모해야 할 칼로리 :kcal "
         android:textColor="@color/black"
         android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -129,33 +141,22 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:text=" 걷기(5km/hr) 0.9\n
-빨리걷기(6.4km/hr) 1.2\n
-달리기(8km/hr) 2\n
-계단오르기(보통) 1.6\n
-자전거 타기(15~20km/hr) 1.5\n
-자전거 타기(20~25km/hr) 2.2\n
-줄넘기 2.6\n
-등산 1.5 "
-        android:textColor="@color/black"
+        android:text=" 체중 1kg 에 대해 15분동안 운동했을 때\n칼로리 소비 계수로 표현한 것입니다.\n\n
+걷기(5km/hr): 0.9\n
+빨리걷기(6.4km/hr): 1.2\n
+달리기(8km/hr): 2\n
+계단오르기(보통): 1.6\n
+자전거 타기(15~20km/hr): 1.5\n
+자전거 타기(20~25km/hr): 2.2\n
+줄넘기: 2.6\n
+등산: 1.5 "
+        android:textColor="#333333"
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/tv_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="평소 활동량 (1~5)"
-        android:textSize="20dp"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

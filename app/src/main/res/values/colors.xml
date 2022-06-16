@@ -11,4 +11,10 @@
     <color name="lightGreen">#43984A</color>
     <color name="orange">#AC7523</color>
     <color name="purple">#673AB7</color>
+    <color name="blue">#2196F3</color>
+    <color name="brown">#603D0A</color>
+    <color name="homeColor">#CCCCCC</color>
+    <color name="dietColor">#FFD18C</color>
+
+
 </resources>
