@@ -5,7 +5,9 @@
     android:id="@+id/tv_basic_question"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatActivity">
+    tools:context=".ChatActivity"
+    android:background="#EEEEEE"
+    >
 
     <TextView
         android:id="@+id/tv_chat_in_title"
@@ -15,47 +17,48 @@
         android:fontFamily="@font/diary_font"
         android:text="AI닥터 진단 중.."
         android:textColor="@color/green"
-        android:textSize="30sp"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="#00000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_answer"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:background="@drawable/box_style"
         android:hint="텍스트를 입력하세요"
         android:inputType="text"
         android:paddingHorizontal="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_question"
-        app:srcCompat="@drawable/doctor2" />
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
     <TextView
         android:id="@+id/tv_question"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="220dp"
         android:layout_marginVertical="20dp"
         android:background="@drawable/box_style"
         android:gravity="center"
         android:paddingHorizontal="20dp"
         android:paddingVertical="20dp"
-        android:text="어디가 불편하신가요?"
+        android:text="어떤 증상이 있으신가요?"
         android:textAlignment="center"
-        android:textSize="23dp"
+        android:textSize="20dp"
+        android:textColor="#333333"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +67,8 @@
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="45dp"
-        android:layout_height="50dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="4dp"
-        android:onClick="nextQuestion"
         app:layout_constraintBottom_toBottomOf="@+id/et_answer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/et_answer"

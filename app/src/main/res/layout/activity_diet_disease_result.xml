@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DietDiseaseResultActivity"
+    android:background="#EEEEEE">
+
+
+    <TextView
+        android:id="@+id/tv_diet_explanation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="기초문진과 평소 활동량에\n기반하여 식단을 추천드립니다."
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.33" />
+
+    <ImageView
+        android:id="@+id/imageView_rice"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/rice"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_soup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diet_explanation" />
+
+    <ImageView
+        android:id="@+id/imageView_soup"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/soup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diet_explanation" />
+
+    <ImageView
+        android:id="@+id/imageView_sidedish"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/sidedish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView_soup"
+        app:layout_constraintTop_toBottomOf="@+id/tv_diet_explanation" />
+
+
+    <TextView
+        android:id="@+id/food1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="밥"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_rice"
+        app:layout_constraintStart_toStartOf="@+id/imageView_rice"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_rice" />
+
+    <TextView
+        android:id="@+id/food2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="국"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_soup"
+        app:layout_constraintStart_toStartOf="@+id/imageView_soup"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_soup" />
+
+    <TextView
+        android:id="@+id/food3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:text="반찬"
+        android:textColor="#333333"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView_sidedish"
+        app:layout_constraintStart_toStartOf="@+id/imageView_sidedish"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_sidedish" />
+
+    <Button
+        android:id="@+id/btn_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/rectangle_button_style_diet"
+        android:paddingVertical="15dp"
+        android:text="다른 식단 보기"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

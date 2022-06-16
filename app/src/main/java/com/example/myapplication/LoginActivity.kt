@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
@@ -17,131 +18,66 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private val apiLogin = ApiLogin.create()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        var textId = binding.etId.text.toString()
-//        var textPw = binding.etPassword.text.toString()
+        var id = ""
+        var pw = ""
+        var login = "" // succeed/fail
+        var name = "" // 이름값
+        var jud_basicdata = "0" //있으면 1, 없으면 0
 
-        var textId = "myID"
-        var textPw = "PW"
+        binding.btnLogin.setOnClickListener {
+            id = binding.etId.text.toString()
+            pw = binding.etPassword.text.toString()
+            var data = LoginPost(id,pw)
+            //통신
+            apiLogin.postLogin(data).enqueue(object : Callback<LoginPostResult> {
+                override fun onResponse(call: Call<LoginPostResult>, response: Response<LoginPostResult>) {
+                    var responseAPI = response.body()
+                    if (responseAPI != null) {
+                        login = responseAPI.login
+                        name = responseAPI.name
+                        jud_basicdata = responseAPI.jud_basicdata.toString()
+                    }
+                }
+                override fun onFailure(call: Call<LoginPostResult>, t: Throwable) {
+                    // 실패
+                    Log.d("log",t.message.toString())
+                    Log.d("log","fail")
+                }
+            })
 
-        var myRetrofit = Retrofit.Builder()
-            .baseUrl("http://172.30.1.24:8080/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        var loginService: LoginService = myRetrofit.create(LoginService::class.java)
-
-        var loginData = LoginData(textId,textId,textPw)
-
-        binding.btnLogin.setOnClickListener{
-
-
-        val intent = Intent(this,BasicQuestionActivity::class.java)
-        startActivity(intent)
-        finish()
-
-//            loginService.requestLogin(loginData).enqueue(object : Callback<ResponseBody> {
-//                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-//
-//
-//                        통신 성공 시 응답 값 받아옴
-//                        var login = response.body()
-//                        Log.d("LOGIN", "result : " + login?.result)
-//
-//                        var dialog = AlertDialog.Builder(this@LoginActivity)
-//                        dialog.setTitle(login?.result)
-//                        dialog.setMessage(login?.result)
-//                        dialog.show()
-//
-//                    var dialog = AlertDialog.Builder(this@LoginActivity)
-//                    dialog.setTitle("성공")
-//                    dialog.setMessage(response.body()!!.toString())
-//                    dialog.show()
-//
-//                }
-//
-//                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-//                    //통신 실패 시
-//                    var dialog = AlertDialog.Builder(this@LoginActivity)
-//                    dialog.setTitle("에러")
-//                    dialog.setMessage("호출실패.")
-//                    dialog.show()
-//                }
-
-
-
-           // })
+            Handler().postDelayed({
+                if(login=="succeed") {
+                    if (jud_basicdata == "0") {
+                        val intent = Intent(this, BasicQuestionActivity::class.java)
+                        intent.putExtra("id", id)
+                        intent.putExtra("name", name)
+                        intent.putExtra("key", "home")
+                        startActivity(intent)
+                        finish()
+                    } else if (jud_basicdata == "1") {
+                        val intent = Intent(this, HomeActivity::class.java)
+                        intent.putExtra("id", id)
+                        intent.putExtra("name", name)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+                else if(login=="fail"){
+                    var dialog = AlertDialog.Builder(this@LoginActivity)
+                    dialog.setTitle("알림")
+                    dialog.setMessage("로그인에 실패하였습니다.\n아이디 혹은 비밀번호를 확인하세요.")
+                    dialog.show()
+                }
+            }, 1200)
         }
-
-
-
     }
-
-//    override fun onClick(view: View?) {
-//        when ( view!!.id) {
-//            R.id.btn_login -> {
-//                login(view)
-//            }
-//        }
-//    }
-
-    private fun login(v: View) {
-        /*
-//        var textId = binding.etId.text.toString()
-//        var textPw = binding.etPassword.text.toString()
-//
-//        var retrofit = Retrofit.Builder()
-//            .baseUrl("http://172.30.1.13:8080")
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//        var loginService: LoginService = retrofit.create(LoginService::class.java)
-//
-//        var loginData = LoginData(textId,textId,textPw)
-
-        loginService.requestLogin(loginData).enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-
-
-//                //통신 성공 시 응답 값 받아옴
-//                var login = response.body()
-//                Log.d("LOGIN", "msg : " + login?.msg)
-//                Log.d("LOGIN", "code : " + login?.code)
-//
-//                var dialog = AlertDialog.Builder(this@LoginActivity)
-//                dialog.setTitle(login?.msg)
-//                dialog.setMessage(login?.code)
-//                dialog.show()
-
-
-                var dialog = AlertDialog.Builder(this@LoginActivity)
-                dialog.setTitle("성공")
-                dialog.setMessage(response.body()!!.toString())
-                dialog.show()
-
-            }
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                //통신 실패 시
-                var dialog = AlertDialog.Builder(this@LoginActivity)
-                dialog.setTitle("에러")
-                dialog.setMessage("호출실패.")
-                dialog.show()
-            }
-
-        })
-*/
-
-//        val intent = Intent(this,BasicQuestionActivity::class.java)
-//        startActivity(intent)
-//        finish()
-
-    }
-
 
     fun signUp(v: View) {
         val intent = Intent(this, SignUpActivity::class.java)

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_basic_question"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+
+    <TextView
+        android:id="@+id/tv_chat_in_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:fontFamily="@font/diary_font"
+        android:text="마이 페이지"
+        android:textColor="@color/green"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/box_style_2"
+        android:paddingHorizontal="2dp"
+        android:paddingVertical="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_start3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_chat_in_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_1_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="0dp"
+                android:paddingVertical="10dp"
+                android:text="님 안녕하세요."
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="성별:"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="나이:"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="키: cm"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="몸무게: kg"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="수술경력/업원여부:\n "
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="과거력:\n"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="2dp"
+                android:background="@drawable/box_style_white_rectangle"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:text="여성력:\n "
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_start3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/round_button_style"
+        android:paddingVertical="20dp"
+        android:text="기초 문진 다시하기"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

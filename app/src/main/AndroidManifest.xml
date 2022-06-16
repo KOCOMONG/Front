@@ -25,17 +25,18 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ChatActivity"
-            android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".ChatActivity"/>
         <activity android:name=".ChatSelectActivity" />
+        <activity android:name=".ChatSecondActivity" />
         <activity android:name=".ChatResultActivity" />
         <activity android:name=".MedicineActivity" />
-        <activity android:name=".Medicine2Activity" />
         <activity android:name=".MedicineResultActivity" />
         <activity android:name=".BasicQuestionActivity" />
         <activity android:name=".SecondQuestionActivity" />
         <activity android:name=".DietActivity" />
         <activity android:name=".DietResultActivity" />
+        <activity android:name=".DietDiseaseResultActivity" />
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>

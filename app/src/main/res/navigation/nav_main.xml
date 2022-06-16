@@ -20,9 +20,4 @@
         android:name="com.example.myapplication.ManagerFragment"
         android:label="fragment_manager"
         tools:layout="@layout/fragment_manager" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.myapplication.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-</navigation>
+    </navigation>
